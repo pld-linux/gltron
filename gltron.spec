@@ -5,8 +5,6 @@ Version:	0.61
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
-Group(de):	X11/Applikationen/Spiele
-Group(pl):	X11/Aplikacje/Gry
 Source0:	http://prdownloads.sourceforge.net/gltron/%{name}-%{version}-source.tar.gz
 Patch0:		%{name}-ac.patch
 URL:		http://www.gltron.org/
