@@ -1,12 +1,12 @@
 Summary:	Game known from movie Tron
 Summary(pl):	Gra znana z filmu Tron
 Name:		gltron
-Version:	0.62
-Release:	2
+Version:	0.70
+Release:	1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/gltron/%{name}-%{version}-source.tar.gz
-# Source0-md5:	cb62b09c39bd3f246432fa390e5e4881
+# Source0-md5:	300e54914844f36c199415d6d8b0372a
 Patch0:		%{name}-configure.patch
 URL:		http://www.gltron.org/
 BuildRequires:	OpenGL-devel
@@ -64,7 +64,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog CREDITS README TODO
+%doc ChangeLog README
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/gltron
-%{_mandir}/man6/gltron.*
+#%{_mandir}/man?/*
