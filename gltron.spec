@@ -41,7 +41,7 @@ przeciwników do wjechania w ten mur. Wygrywa ostatni ¿yj±cy gracz.
 %patch0 -p1
 
 %build
-autoconf
+%{__autoconf}
 CPPFLAGS="-I%{_includedir}"; export CPPFLAGS
 %configure \
 	%{?debug:--enable-debug} \
