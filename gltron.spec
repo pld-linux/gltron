@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/gltron/%{name}-%{version}-source.tar.gz
+# Source0-md5:	cb62b09c39bd3f246432fa390e5e4881
 Patch0:		%{name}-configure.patch
 URL:		http://www.gltron.org/
 BuildRequires:	OpenGL-devel
