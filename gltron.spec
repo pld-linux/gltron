@@ -15,6 +15,7 @@ BuildRequires:	SDL_net-devel
 BuildRequires:	SDL_sound-devel >= 1.0.1
 BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	XFree86-devel
+BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libpng-devel
 BuildRequires:	zlib-devel
@@ -43,6 +44,7 @@ przeciwników do wjechania w ten mur. Wygrywa ostatni ¿yj±cy gracz.
 %patch0 -p1
 
 %build
+cp -f /usr/share/automake/config.sub .
 %{__autoconf}
 CPPFLAGS="-I/usr/X11R6/include"
 LDFLAGS="-L/usr/X11R6/lib"
