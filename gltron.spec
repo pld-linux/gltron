@@ -1,13 +1,12 @@
 Summary:	Game known from movie Tron
 Summary(pl):	Gra znana z filmu Tron
 Name:		gltron
-Version:	0.61
-Release:	2
+Version:	0.62
+Release:	1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://prdownloads.sourceforge.net/gltron/%{name}-%{version}-source.tar.gz
-Patch0:		%{name}-ac.patch
-Patch1:		%{name}-path.patch
+Patch0:		%{name}-configure.patch
 URL:		http://www.gltron.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL_net-devel
@@ -17,13 +16,12 @@ BuildRequires:	zlib-devel
 BuildRequires:	libpng-devel
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
+BuildRequires:	SDL_sound-devel
 Requires:	OpenGL
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1 libGLcore.so.1
 %define		_prefix		/usr/X11R6
-%define		_datadir	%{_prefix}/share/%{name}
-%define		_mandir		%{_prefix}/man
 
 %define		no_install_post_strip 1
 
@@ -42,30 +40,28 @@ przeciwników do wjechania w ten mur. Wygrywa ostatni ¿yj±cy gracz.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__autoconf}
-CPPFLAGS="-I%{_includedir}"; export CPPFLAGS
 %configure \
 	%{?debug:--enable-debug} \
-	--disable-optimize
-# doesn't compile at this moment
+	--disable-optimize 
 #	--enable-network
 
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}}
 
-%{makeinstall}
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGELOG CREDITS README TODO
+%doc ChangeLog CREDITS README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}
+%{_mandir}/man6/gltron.*
