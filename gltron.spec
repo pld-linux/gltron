@@ -2,7 +2,7 @@ Summary:	Game known from movie Tron
 Summary(pl):	Gra znana z filmu Tron
 Name:		gltron
 Version:	0.70
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/gltron/%{name}-%{version}-source.tar.gz
