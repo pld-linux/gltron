@@ -48,7 +48,7 @@ CPPFLAGS="-I/usr/X11R6/include"
 LDFLAGS="-L/usr/X11R6/lib"
 %configure \
 	%{?debug:--enable-debug} \
-	--disable-optimize 
+	--disable-optimize
 #	--enable-network
 
 %{__make}
