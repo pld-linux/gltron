@@ -10,13 +10,13 @@ Source0:	http://dl.sourceforge.net/gltron/%{name}-%{version}-source.tar.gz
 Patch0:		%{name}-configure.patch
 URL:		http://www.gltron.org/
 BuildRequires:	OpenGL-devel
+BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_net-devel
 BuildRequires:	SDL_sound-devel >= 1.0.1
-BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	XFree86-devel
-BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libpng-devel
 BuildRequires:	zlib-devel
 Requires:	OpenGL
@@ -47,7 +47,7 @@ przeciwników do wjechania w ten mur. Wygrywa ostatni ¿yj±cy gracz.
 cp -f /usr/share/automake/config.sub .
 %{__autoconf}
 CPPFLAGS="-I/usr/X11R6/include"
-LDFLAGS="-L/usr/X11R6/lib"
+LDFLAGS="-L/usr/X11R6/%{_lib}"
 %configure \
 	%{?debug:--enable-debug} \
 	--disable-optimize
