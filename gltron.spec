@@ -48,8 +48,7 @@ CPPFLAGS="-I%{_includedir}"; export CPPFLAGS
 	--disable-optimize
 # doesn't compile at this moment
 #	--enable-network
-	
-	
+
 %{__make}
 
 %install
