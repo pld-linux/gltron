@@ -1,0 +1,12 @@
+diff -urN gltron-0.62.orig/configure.in gltron-0.62/configure.in
+--- gltron-0.62.orig/configure.in	Thu Jan  2 22:14:02 2003
++++ gltron-0.62/configure.in	Thu Jan  2 22:29:14 2003
+@@ -52,7 +52,7 @@
+ AC_HELP_STRING([--enable-optimize=@<:@level@:>@],[Enable optimization @<:@default=s@:>@]),
+ 	enable_optmize=$enableval, enable_optimize=s)
+ dnl this is always true
+-if test "x$enable_optimize" ; then
++if test "x$enable_optimize" != xno -a "x$enable_optimize" ; then
+ 	CFLAGS="$CFLAGS -O$enable_optimize"
+ 	CXXFLAGS="$CXXFLAGS -O$enable_optimize"
+ fi
