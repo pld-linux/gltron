@@ -2,11 +2,12 @@ Summary:	Game known from movie Tron
 Summary(pl):	Gra znana z filmu Tron
 Name:		gltron
 Version:	0.61
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://prdownloads.sourceforge.net/gltron/%{name}-%{version}-source.tar.gz
 Patch0:		%{name}-ac.patch
+Patch1:		%{name}-path.patch
 URL:		http://www.gltron.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL_net-devel
@@ -24,6 +25,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_datadir	%{_prefix}/share/%{name}
 %define		_mandir		%{_prefix}/man
 
+%define		no_install_post_strip 1
+
 %description
 Network game in which you steer a futuristic bike, called lightcycle.
 Combat takes place in a rectangular arena. Your bike leaves a trail
@@ -39,6 +42,7 @@ przeciwników do wjechania w ten mur. Wygrywa ostatni ¿yj±cy gracz.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__autoconf}
