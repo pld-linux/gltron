@@ -1,5 +1,5 @@
-Summary:	Multiplayer game
-Summary(pl):	Ssieciowa gra
+Summary:	Game known from movie Tron
+Summary(pl):	Gra znana z filmu Tron
 Name:		gltron
 Version:	0.61
 Release:	1
