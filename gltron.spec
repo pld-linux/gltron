@@ -9,20 +9,22 @@ Source0:	http://prdownloads.sourceforge.net/gltron/%{name}-%{version}-source.tar
 Patch0:		%{name}-configure.patch
 URL:		http://www.gltron.org/
 BuildRequires:	OpenGL-devel
-BuildRequires:	SDL_net-devel
 BuildRequires:	SDL_mixer-devel
+BuildRequires:	SDL_net-devel
+BuildRequires:	SDL_sound-devel
 BuildRequires:	SDL-devel >= 1.2.0
-BuildRequires:	zlib-devel
-BuildRequires:	libpng-devel
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
-BuildRequires:	SDL_sound-devel
+BuildRequires:	libpng-devel
+BuildRequires:	zlib-devel
 Requires:	OpenGL
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1 libGLcore.so.1
 %define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 
+# why no stripping???
 %define		no_install_post_strip 1
 
 %description
@@ -43,6 +45,7 @@ przeciwników do wjechania w ten mur. Wygrywa ostatni ¿yj±cy gracz.
 
 %build
 %{__autoconf}
+CPPFLAGS="-I/usr/X11R6/include"
 %configure \
 	%{?debug:--enable-debug} \
 	--disable-optimize 
@@ -63,5 +66,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog CREDITS README TODO
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}
+%{_datadir}/gltron
 %{_mandir}/man6/gltron.*
