@@ -5,7 +5,7 @@ Version:	0.62
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	http://prdownloads.sourceforge.net/gltron/%{name}-%{version}-source.tar.gz
+Source0:	http://dl.sourceforge.net/gltron/%{name}-%{version}-source.tar.gz
 Patch0:		%{name}-configure.patch
 URL:		http://www.gltron.org/
 BuildRequires:	OpenGL-devel
