@@ -57,13 +57,11 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}}
 
 %{makeinstall}
 
-gzip -9nf CHANGELOG CREDITS README TODO
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc CHANGELOG CREDITS README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}
