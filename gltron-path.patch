@@ -1,0 +1,53 @@
+--- gltron-0.61.org/file.c	Sat Apr  7 00:30:36 2001
++++ gltron-0.61/file.c	Thu Dec 26 21:51:03 2002
+@@ -15,12 +15,12 @@
+ #    define SEPERATOR '/'
+ #endif
+ 
+-static int n_dirs = 2;
++static int n_dirs = 1;
+ 
+ #ifdef macintosh 
+ static char *dirs[] = { ":Data", ":Art" };
+ #else
+-static char *dirs[] = { "data", "art" };
++static char *dirs[] = { "/usr/X11R6/share/gltron" };
+ #endif
+ 
+ /* fopen() in MacOS on a directory returns NULL, here is a better solution */
+--- gltron-0.61.org/Makefile.in	Thu Apr 12 22:24:24 2001
++++ gltron-0.61/Makefile.in	Thu Dec 26 22:17:46 2002
+@@ -107,7 +107,7 @@
+ 	$(CC) $(OPT) -o gltron $(OBJ_SOUND) $(LIBS)
+ 
+ INSTALL_FILES = gltron
+-DATA_FILES = data/* sounds/*wav
++DATA_FILES = data/* art/* sounds/*wav
+ 
+ install: $(INSTALL_FILES)
+ 	if [ ! -d $(GLTRON_INSTALLDIR) ] ; then \
+--- gltron-0.61.org/gltron.h	Mon Apr 16 17:33:15 2001
++++ gltron-0.61/gltron.h	Thu Dec 26 22:28:09 2002
+@@ -113,9 +113,9 @@
+ #define PHYSICS_RATE 20
+ 
+ #define SONG_PREFIX "song_"
+-#define MUSIC_DIR "music"
++#define MUSIC_DIR "music"
+ 
+-#define PATH_ART "art"
++#define PATH_ART "/usr/X11R6/share/gltron"
+ 
+ #define PLAYERS 4
+ #define MAX_PLAYERS 4
+--- gltron-0.61.org/directory.c	Thu Apr 12 22:24:24 2001
++++ gltron-0.61/directory.c	Thu Dec 26 22:36:06 2002
+@@ -25,7 +25,7 @@
+ #ifdef macintosh
+ static char* subdir = ":Data";
+ #else 
+-static char* subdir = "data";
++static char* subdir = "/usr/X11R6/share/gltron";
+ #endif
+ 
+ /* the following code doesn't compile under non-POSIX systems (they
