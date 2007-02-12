@@ -1,5 +1,5 @@
 Summary:	Game known from movie Tron
-Summary(pl):	Gra znana z filmu Tron
+Summary(pl.UTF-8):   Gra znana z filmu Tron
 Name:		gltron
 Version:	0.70
 Release:	2
@@ -33,11 +33,11 @@ Combat takes place in a rectangular arena. Your bike leaves a trail
 behind, which is like a wall. The goal is to force the other players
 to drive into a wall. The winner is the last player alive.
 
-%description -l pl
-Sieciowa gra w której sterujesz futurystycznym motorem nazywanym
-¶wietlny-motor. Walki tocz± siê na prostok±tnej arenie. Twój motor
-pozostawia za sob± ¶lad, który jest jak mur. Celem gry jest zmuszenie
-przeciwników do wjechania w ten mur. Wygrywa ostatni ¿yj±cy gracz.
+%description -l pl.UTF-8
+Sieciowa gra w ktÃ³rej sterujesz futurystycznym motorem nazywanym
+Å›wietlny-motor. Walki toczÄ… siÄ™ na prostokÄ…tnej arenie. TwÃ³j motor
+pozostawia za sobÄ… Å›lad, ktÃ³ry jest jak mur. Celem gry jest zmuszenie
+przeciwnikÃ³w do wjechania w ten mur. Wygrywa ostatni Å¼yjÄ…cy gracz.
 
 %prep
 %setup -q
