@@ -1,5 +1,5 @@
 Summary:	Game known from movie Tron
-Summary(pl.UTF-8):   Gra znana z filmu Tron
+Summary(pl.UTF-8):	Gra znana z filmu Tron
 Name:		gltron
 Version:	0.70
 Release:	2
