@@ -24,9 +24,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1 libGLcore.so.1
 
-# why no stripping???
-%define		no_install_post_strip 1
-
 %description
 Network game in which you steer a futuristic bike, called lightcycle.
 Combat takes place in a rectangular arena. Your bike leaves a trail
