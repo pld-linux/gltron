@@ -38,7 +38,7 @@ przeciwników do wjechania w ten mur. Wygrywa ostatni żyjący gracz.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 cp -f /usr/share/automake/config.sub .
